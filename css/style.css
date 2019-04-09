@@ -1,0 +1,74 @@
+header {
+  height: 100px;
+  background-color: #444;
+  width: 1080px;
+}
+
+body {
+  width: auto;
+  height: 400px;
+}
+
+body * {
+  /* border: 1px solid red; */
+}
+
+nav {
+  height: 70px;
+}
+
+nav img {
+  display: inline-block;
+}
+
+.navi {
+  display: inline-block;
+  vertical-align: top;
+}
+
+nav li {
+  display: inline-block;
+  line-height: 70px;
+  padding: 0 45px;
+}
+
+ul img {
+  height: 250px;
+  width: 250px;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  align-content: space-around;
+}
+
+#divbox {
+  float: left;
+  clear: left;
+  height: 365px;
+  width: 137px;
+}
+
+div button {
+  height: auto;
+  width: auto;
+
+}
+
+.button {
+  display: flex;
+  flex-direction: row;
+  align-content: space-between;
+}
+
+p {
+  max-width: 960px;
+}
+
+footer {
+  height: 100px;
+  background-color: #444;
+  width: 1080px;
+  margin-top: 20px;
+}
