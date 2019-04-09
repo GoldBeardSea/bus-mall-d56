@@ -9,8 +9,8 @@ body {
   height: 400px;
 }
 
-body * {
-  /* border: 1px solid red; */
+li {
+  list-style-type: none;
 }
 
 nav {
