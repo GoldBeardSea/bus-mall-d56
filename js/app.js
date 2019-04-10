@@ -48,35 +48,46 @@ let firstProd = allProducts[0];
 let secondProd = allProducts[1];
 let thirdProd = allProducts[2];
 
+function iterate() {
+  firstProd.iterations++;
+  secondProd.iterations++;
+  thirdProd.iterations++;
+}
 
 function firstProdClick() {
   counter++;
   firstProd.votes++;
-  firstProd.iterations++;
-  secondProd.iterations++;
-  thirdProd.iterations++;
-  newProduct();
-  counterEnd();
+  iterate();
+  if (counter === 25) {
+    counterEnd();
+  } else {
+    newProduct();
+  }
+  console.log(Product.priorDisplay + 'The counter is ' + counter);
 }
 
 function secondProdClick() {
   counter++;
   secondProd.votes++;
-  firstProd.iterations++;
-  secondProd.iterations++;
-  thirdProd.iterations++;
-  newProduct();
-  counterEnd();
+  iterate();
+  if (counter === 25) {
+    counterEnd();
+  } else {
+    newProduct();
+  }
+  console.log(Product.priorDisplay + 'The counter is ' + counter);
 }
 
 function thirdProdClick() {
   counter++;
   thirdProd.votes++;
-  firstProd.iterations++;
-  secondProd.iterations++;
-  thirdProd.iterations++;
-  newProduct();
-  counterEnd();
+  iterate();
+  if (counter === 25) {
+    counterEnd();
+  } else {
+    newProduct();
+  }
+  console.log(Product.priorDisplay + 'The counter is ' + counter);
 }
 
 buttonOne.addEventListener('click', firstProdClick);
@@ -124,8 +135,64 @@ function counterEnd () {
     buttonOne.removeEventListener('click', firstProdClick);
     buttonTwo.removeEventListener('click', secondProdClick);
     buttonThree.removeEventListener('click', thirdProdClick);
+    Product.renderChart();
   }
 }
+
+Product.prototype.calcPercent = function () {
+  let division = (this.votes / this.iterations);
+  this.votePercent = Math.round(division * 100);
+};
+
+Product.renderChart = function () {
+  var ctx = document.getElementById('myChart');
+  new Chart(ctx, {
+    type: 'horizontalBar',
+    data: {
+      labels: Product.names,
+      datasets: [{
+        label: 'Product Votes',
+        data: Product.votes,
+        backgroundColor: ['rgba(230, 25, 75, 0.8)',
+          'rgba(60, 180, 75, 0.8)',
+          'rgba(25, 255, 255, 0.8)',
+          'rgba(255, 255, 25, 0.8)',
+          'rgba(0, 130, 200, 0.8)',
+          'rgba(245, 130, 48, 0.8)',
+          'rgba(145, 130, 48, 0.8)',
+          'rgba(70, 240, 240, 0.8)',
+          'rgba(240, 50, 230, 0.8)',
+          'rgba(25, 245, 210, 0.8)',
+          'rgba(250, 190, 190, 0.8)',
+          'rgba(0, 0, 132, 0.8)',
+          'rgba(128, 0, 0, 0.8)',
+          'rgba(128, 100, 0, 0.8)',
+          'rgba(0, 128, 128, 0.8)',
+          'rgba(255, 255, 255, 0.8)',
+          'rgba(0, 0, 0, 0.8)',
+          'rgba(60, 120, 244, 0.8)',
+          'rgba(40, 80, 170, 0.8)',
+          'rgba(84, 48, 240, 0.8)',
+          'rgba(230, 190, 255, 0.8)',
+        ],
+        hoverBackgroundColor: 'yellow'
+      }]
+    },
+    options: {
+      scales: {
+        yAxes: [{
+          ticks: {
+            beginAtZero: true
+          }
+        }]
+      },
+      title: {
+        display: true,
+        text: 'Results'
+      }
+    }
+  });
+};
 
 counterEnd();
 newProduct();
