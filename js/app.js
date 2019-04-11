@@ -7,6 +7,7 @@ let buttonThree = document.getElementById('button-three');
 let productImgOne = document.getElementById('one');
 let productImgTwo = document.getElementById('two');
 let productImgThree = document.getElementById('three');
+Product.parsedAllProducts = JSON.parse(localStorage.getItem('CapturedState'));
 
 Product.priorDisplay = [];
 Product.currentDisplay = [];
@@ -21,7 +22,7 @@ function Product(name, url) {
   this.votePercent = 0;
 }
 
-let allProducts = [
+let allProducts = Product.parsedAllProducts || [
   new Product('Bag', 'img/bag.jpg'),
   new Product('Banana', 'img/banana.jpg'),
   new Product('Bathroom', 'img/bathroom.jpg'),
@@ -135,6 +136,7 @@ function counterEnd () {
     buttonOne.removeEventListener('click', firstProdClick);
     buttonTwo.removeEventListener('click', secondProdClick);
     buttonThree.removeEventListener('click', thirdProdClick);
+    localStorage.setItem('CapturedState', JSON.stringify(allProducts));
     Product.renderChart();
   }
 }
