@@ -1,12 +1,15 @@
+body {
+  width: auto;
+  width: 80%;
+  margin: 30px 90px 30px 90px;
+  font-family: 'Bitter', serif;
+  font-family: 'Anton', sans-serif;
+}
+
 header {
   height: 100px;
   background-color: #444;
   width: 1080px;
-}
-
-body {
-  width: auto;
-  height: 400px;
 }
 
 li {
@@ -50,25 +53,54 @@ ul img {
   width: 137px;
 }
 
-div button {
+button {
   height: auto;
   width: auto;
-
+  padding: 15px 32px;
+  font-family: 'Bitter', serif;
+  font-family: 'Anton', sans-serif;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
 }
 
-.button {
+#button-one {
+  color: white;
+  background-color: red;
+}
+
+#button-two {
+  color: black;
+  background-color: white;
+}
+
+#button-three {
+  color: white;
+  background-color: blue;
+}
+
+.flexdiv {
   display: flex;
   flex-direction: row;
-  align-content: space-between;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
-p {
-  max-width: 960px;
+.ulitems {
+  flex-grow: 1;
 }
 
 footer {
   height: 100px;
-  background-color: #444;
+  background-color: rgb(0, 180, 255);
   width: 1080px;
   margin-top: 20px;
+}
+
+footer ul {
+  width: fit-content;
+  margin: auto;
+  padding: 10px;
 }
