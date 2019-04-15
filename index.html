@@ -5,46 +5,50 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <link rel="stylesheet" href="css/reset.css" type="text/css">
-  <link href="css/style.css" rel="stylesheet" type="text/css" />    
+  <link href="css/style.css" rel="stylesheet" type="text/css" />   
+  <link href="https://fonts.googleapis.com/css?family=Anton|Bitter" rel="stylesheet">  
 </head>
 <body>
   <header>
       <nav>
-          <img src="img/200x70.png" alt="placeholder">
+          <img src="img/bus.jpg" alt="Seattle Bus">
           <ul class="navi">
-            <li>Home</li>
-            <li>Product</li>
-            <li>About</li>
-            <li>Contact</li>
-          </ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Product</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
         </nav>
   </header>
   <main>
-      <div id="containerDiv">
-        <ul id="votes">
-        </ul>
-      </div>
-        <ul class="container">
-            <li><img src="img/bag.jpg" alt="placeholder" id="one"></li>
-            <li><img src="img/banana.jpg" alt="placeholder" id="two"></li>
-            <li><img src="img/bathroom.jpg" alt="placeholder" id="three"></li>
-        </ul>
-        <div class="button">
-            <button id="button-one">Vote For First Product</button>
-            <button id="button-two">Vote For Second Product</button>
-            <button id="button-three">Vote For Third Product</button>
-        </div>
-        <div>
-          <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam lobortis sapien ornare, porta neque eget, commodo lectus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Etiam imperdiet urna est, in consectetur sapien hendrerit eget. Mauris semper elit ut tellus pellentesque viverra cursus sed enim. Mauris scelerisque nibh ipsum, ut aliquet leo pharetra non. Praesent in urna vitae quam convallis mollis sed eu dui. Curabitur quis auctor dolor. Proin non eros molestie, pulvinar augue eget, placerat sem.
-          </p>
-        </div>
-        <canvas id="myChart"></canvas>
+    <div class='flexdiv'>
+    <ul class='ulitems'>
+      <li><img src="" alt="" id="one"></li>
+      <li><button id="button-one">Vote For First Product</button></li>
+    </ul>
+    <ul class='ulitems'>
+      <li><img src="" alt="" id="two"></li>
+      <li><button id="button-two">Vote For Second Product</button></li>
+    </ul>
+    <ul class='ulitems'>
+      <li><img src="" alt="" id="three"></li>
+      <li><button id="button-three">Vote For Third Product</button></li>
+    </ul>
+    </div>
+    <div class="class">
+      <p>Welcome to the Bus Mall Catalog. Come Join us as part of the future of land transportation themed shopping that money can buy.</p>
+      <p>Please help us make bus mall what you want out of a shopping catalog by completing the survey. You can reload the page after 25 iterations and see how the page changes over time.</p>
+    </div>
+    <canvas id="myChart"></canvas>
   </main>
   <footer>
+      <ul>
+          <li>Copyright 2018</li>
+          <li>Busmall Catalog</li>
+          <li>All Rights Reserved</li>
+      </ul>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
     <script src='./js/app.js'></script>
   </footer>
-
 </body>
 </html>

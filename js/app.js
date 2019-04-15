@@ -121,14 +121,10 @@ function newProduct() {
 
 
 function counterEnd () {
-  let voteTally = document.getElementById('votes');
   if (counter === 25) {
     for (let i = 0; i < allProducts.length; i++) {
       Product.votes.push(allProducts[i].votes);
       Product.names.push(allProducts[i].name);
-      let liEl = document.createElement('li');
-      liEl.textContent = allProducts[i].name + ' ' + allProducts[i].votes + ' Votes';
-      voteTally.appendChild(liEl);
       let division = (allProducts[i].votes / allProducts[i].iterations);
       let votePercent = Math.round(division * 100);
       allProducts[i].votePercent = votePercent;
